@@ -172,10 +172,10 @@
         //      success: function (response) {},
         //      error: function (error) {}
         //  });
-        var submit_form = document.querySelectorAll(".pushdb-form");
+        var submit_form = document.getElementById('sheetdb-form');
         fetch(submit_form.action, {
             method : "POST",
-            body: new FormData(document.querySelectorAll(".pushdb-form")),
+            body: new FormData(document.getElementById("sheetdb-form")),
         }).then(
             response => response.json()
         ).then((html) => {
