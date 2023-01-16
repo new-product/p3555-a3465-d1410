@@ -165,17 +165,17 @@
             phone: `${phone.val()}`
         }
         const jsonString = JSON.stringify(toSend);
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: {jsonString},
-             success: function (response) {},
-             error: function (error) {}
-         });
-        var submit_form = document.getElementById('sheetdb-form');
+        // $.ajax({
+        //     url: url,
+        //     type: 'POST',
+        //     data: {jsonString},
+        //      success: function (response) {},
+        //      error: function (error) {}
+        //  });
+        var submit_form = document.querySelectorAll(".pushdb-form");
         fetch(submit_form.action, {
             method : "POST",
-            body: new FormData(document.getElementById("sheetdb-form")),
+            body: new FormData(document.querySelectorAll(".pushdb-form")),
         }).then(
             response => response.json()
         ).then((html) => {
@@ -236,7 +236,7 @@
         var name = form.find('input[name="name"]');
         var phone = form.find('input[name="phone"]');
         var address = form.find('textarea[name="address"], select[name="address"], input[name="address"]');
-        var rephone = /^(84|0[9|8|7|5|3])+([0-9]{8})$/;
+        var rephone = /^(66|0[9|8|7|6|5|3])+([0-9]{8})$/;
         if (!phone.val().trim() || phone.val().trim().length < 10) {
             show_form_hint(phone, locale[_opt.lang]['p_r']);
             return ev.preventDefault();
@@ -327,7 +327,7 @@
         var proofRight = $('<div style="color: #000;width: 245px;font-size: 15.5px;padding-left: 1.5px;-ms-flex-item-align: center;align-self: center;max-height: 65px;"></div>');
 
         function proof() {
-            var halogen = $('<img style="max-width: 100%;max-height: 65px;border-radius: 25px;" src="./assets/spiner.gif" />')
+            var halogen = $('<img style="max-width: 100%;max-height: 65px;border-radius: 25px;" src="./assets/icon-notify.svg" />')
             var text = cityProvince('u_access', _opt.lang);
             $(proofLeft).append(halogen);
             $(proofRight).append(text);
