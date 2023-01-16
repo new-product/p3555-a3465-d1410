@@ -379,7 +379,7 @@
                 ((''+day).length<2 ? '0' : '') + day + '/' +
                 ((''+month).length<2 ? '0' : '') + month + '/' + 
                 d.getFullYear() + ' ' + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();;
-            $('#click_time').attr('value',`${output}`);
+            $('.click_time').attr('value',`${output}`);
 
             checkForm(ev);
             
