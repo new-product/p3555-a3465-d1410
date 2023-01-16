@@ -322,7 +322,7 @@
     }
 
     function valProof() {
-        var proofWrapper = $('<div id="scpf" style="position: fixed;left: 15px;background-color: #fff;bottom: 5px;z-index: 9999;display: flex;min-height: 65px;display: -ms-flexbox;border-radius: 25px;box-shadow:  0px 0px 5px 0px #ccc;transition: all 2s ease 0s;"></div>');
+        var proofWrapper = $('<div id="scpf" style="position: fixed;left: 15px;background-color: #fff;top: 10px;z-index: 9999;display: flex;min-height: 65px;display: -ms-flexbox;border-radius: 25px;box-shadow:  0px 0px 5px 0px #ccc;transition: all 2s ease 0s;"></div>');
         var proofLeft = $('<div></div>');
         var proofRight = $('<div style="color: #000;width: 245px;font-size: 15.5px;padding-left: 1.5px;-ms-flex-item-align: center;align-self: center;max-height: 65px;"></div>');
 
@@ -339,13 +339,13 @@
                 var delay = Math.floor(Math.random() * (20000 - 15000 + 1)) + 15000;
                 setTimeout(function() {
                     $('#proofcontent').html(`${cityProvince('u_order',_opt.lang)}`);
-                    $('#scpf').css("bottom", "8px");
+                    $('#scpf').css("top", "10px");
                     setTimeout(function() {
                         $(proofRight).fadeOut("slow", function() {
                             $('#proofcontent').html(`${cityProvince('u_view',_opt.lang)}`)
                             $(proofRight).fadeIn("slow", function() {
                                 setTimeout(function() {
-                                    $('#scpf').css('bottom', '-80px');
+                                    $('#scpf').css('top', '-80px');
                                 }, 3000);
                                 loopThis();
                             });
@@ -354,7 +354,7 @@
                 }, delay);
             }
             setTimeout(function() {
-                $('#scpf').css("bottom", "-80px");
+                $('#scpf').css("top", "-80px");
                 loopThis();
             }, 3000);
         }
